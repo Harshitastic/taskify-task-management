@@ -169,7 +169,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-slate-50 dark:bg-[#0d0e12] text-slate-850 dark:text-slate-200 flex flex-col transition-colors duration-150">
       <Navbar />
 
-      <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20 sm:pb-8 space-y-6">
         {/* Welcome Section */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>

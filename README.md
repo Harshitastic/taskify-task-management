@@ -1,6 +1,8 @@
 # Taskify - Clean & Minimalist Task Management Workspace
 
-Taskify is a modern, fast, and highly legible task management dashboard built with **Next.js (App Router), React, TypeScript, Tailwind CSS, and Prisma with SQLite**. It is designed with a focus on simplicity, high readability, and clean layout controls.
+**Live Demo**: [taskify-task-management-zeta.vercel.app](https://taskify-task-management-zeta.vercel.app)
+
+Taskify is a modern, fast, and highly legible task management dashboard built with **Next.js (App Router), React, TypeScript, Tailwind CSS, and Prisma with Vercel Postgres (PostgreSQL)**. It is designed with a focus on simplicity, high readability, and clean layout controls.
 
 ---
 

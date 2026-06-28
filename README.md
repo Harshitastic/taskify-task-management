@@ -4,18 +4,6 @@ Taskify is a modern, fast, and highly legible task management dashboard built wi
 
 ---
 
-## 📸 Screenshots
-
-### Dashboard Workspace
-![Dashboard Workspace](public/screenshots/dashboard.png)
-
-### Authentication Flow (Login & Registration)
-| Sign In | Sign Up |
-| :---: | :---: |
-| ![Sign In](public/screenshots/login.png) | ![Sign Up](public/screenshots/register.png) |
-
----
-
 ## ✨ Features
 
 - **Color-Coded Dashboard Statistics**:

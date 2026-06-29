@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
 
 export async function POST(req: Request) {
   try {
@@ -17,21 +15,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
+    // Convert file to base64 Data URL
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const base64Data = buffer.toString("base64");
+    const fileUrl = `data:${file.type || "image/png"};base64,${base64Data}`;
 
-    // Ensure public/uploads directory exists
-    const uploadsDir = path.join(process.cwd(), "public", "uploads");
-    await mkdir(uploadsDir, { recursive: true });
-
-    // Generate unique filename using user ID and current timestamp
-    const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
-    const uniqueFileName = `${session.userId}-${Date.now()}-${originalName}`;
-    const filePath = path.join(uploadsDir, uniqueFileName);
-
-    await writeFile(filePath, buffer);
-
-    const fileUrl = `/uploads/${uniqueFileName}`;
     return NextResponse.json({ fileUrl }, { status: 200 });
   } catch (error) {
     console.error("Upload error:", error);

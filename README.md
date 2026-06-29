@@ -26,8 +26,8 @@ Taskify is a modern, fast, and highly legible task management dashboard built wi
   - Update user name and upload profile pictures stored locally.
 - **Native Dark Mode**:
   - Toggle between dark and light themes instantly.
-- **Relational SQLite Database**:
-  - Data persistence managed with Prisma ORM.
+- **Relational Database**:
+  - Data persistence managed with Prisma ORM (SQLite locally, PostgreSQL / Neon in production).
 
 ---
 
@@ -36,7 +36,7 @@ Taskify is a modern, fast, and highly legible task management dashboard built wi
 - **Framework**: Next.js 16 (App Router)
 - **UI & Iconography**: React, Tailwind CSS, Lucide React
 - **Database ORM**: Prisma Client
-- **Local Database**: SQLite
+- **Database**: SQLite (local) / PostgreSQL & Neon (production)
 - **Environment**: Node.js, TypeScript
 
 ---
@@ -51,10 +51,12 @@ npm install
 ```
 
 ### 2. Set Up the Database
-Configure your environment variables (e.g. database URL in `.env`), then run the database migrations and client generator:
+For local development (SQLite):
 ```bash
 npx prisma db push
 ```
+For production (PostgreSQL / Neon):
+The deployment build script dynamically checks and auto-creates a dedicated `taskify` database on Neon, and routes the database connection to it to avoid schema clashes with other projects.
 
 ### 3. Run Development Server
 Start the Next.js development server locally:
